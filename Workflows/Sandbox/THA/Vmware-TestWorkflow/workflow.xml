@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:workflow xmlns:ns2="http://vmware.com/vco/workflow" root-name="item1" object-name="workflow:name=generic" id="da7457cc-a726-4ad5-96a1-6e9944977a9f" editor-version="1.6" version="1.1.0" api-version="6.0.0" allowed-operations="vfe" restartMode="1" resumeFromFailedMode="0">
+    <display-name>Vmware-TestWorkflow</display-name>
+    <position y="50.0" x="100.0"/>
+    <input>
+        <param name="input1" type="string"/>
+        <param name="input2" type="string"/>
+        <param name="input3" type="string"/>
+        <param name="input4" type="boolean"/>
+        <param name="input5" type="string"/>
+        <param name="input6" type="string"/>
+        <param name="input7" type="string"/>
+        <param name="input8" type="string"/>
+        <param name="input9" type="string"/>
+        <param name="input10" type="string"/>
+        <param name="input11" type="string"/>
+        <param name="input12" type="string"/>
+    </input>
+    <output/>
+    <workflow-item name="item0" type="end" end-mode="0" comparator="0">
+        <in-binding/>
+        <out-binding/>
+        <position y="45.40909090909091" x="384.5"/>
+    </workflow-item>
+    <workflow-item name="item1" out-name="item0" type="task" comparator="0">
+        <display-name>test</display-name>
+        <script encoded="false">System.log (input12);</script>
+        <in-binding>
+            <bind name="input1" type="string" export-name="input1"/>
+            <bind name="input2" type="string" export-name="input2"/>
+            <bind name="input3" type="string" export-name="input3"/>
+            <bind name="input4" type="boolean" export-name="input4"/>
+            <bind name="input5" type="string" export-name="input5"/>
+            <bind name="input6" type="string" export-name="input6"/>
+            <bind name="input7" type="string" export-name="input7"/>
+            <bind name="input8" type="string" export-name="input8"/>
+            <bind name="input9" type="string" export-name="input9"/>
+            <bind name="input10" type="string" export-name="input10"/>
+            <bind name="input11" type="string" export-name="input11"/>
+            <bind name="input12" type="string" export-name="input12"/>
+        </in-binding>
+        <out-binding/>
+        <position y="55.40909090909091" x="204.5"/>
+    </workflow-item>
+    <presentation>
+        <p-step>
+            <title>test1</title>
+            <p-group>
+                <title>subtest1</title>
+                <p-param name="input1">
+                    <desc>input1</desc>
+                </p-param>
+                <p-param name="input2">
+                    <desc>input2</desc>
+                </p-param>
+            </p-group>
+        </p-step>
+        <p-step>
+            <title>test2</title>
+            <p-param name="input3">
+                <desc>input3</desc>
+                <p-qual kind="ognl" name="dataBinding" type="string">GetAction("a.test","testAction").call( #input1 )</p-qual>
+            </p-param>
+            <p-param name="input4">
+                <desc>subtest3 hide</desc>
+            </p-param>
+        </p-step>
+        <p-step>
+            <title>test3</title>
+            <p-param name="input5">
+                <desc>input5</desc>
+                <p-qual kind="ognl" name="ognlValidator" type="String">#__current == "def" ? null : "Value is not valid"</p-qual>
+            </p-param>
+            <p-param name="input6">
+                <desc>input6</desc>
+                <p-qual kind="ognl" name="ognlValidator" type="String">#__current == "abc" ? null : "Value is not valid"</p-qual>
+            </p-param>
+        </p-step>
+        <p-step>
+            <title>test4</title>
+            <p-group>
+                <title>subtest2</title>
+                <p-param name="input7">
+                    <desc>input7</desc>
+                </p-param>
+                <p-param name="input8">
+                    <desc>input8</desc>
+                    <p-qual kind="ognl" name="dataBinding" type="string">GetAction("a.test","testAction").call( #input7 )</p-qual>
+                </p-param>
+                <p-param name="input9">
+                    <desc>input9</desc>
+                </p-param>
+                <p-param name="input10">
+                    <desc>input10</desc>
+                    <p-qual kind="ognl" name="dataBinding" type="string">GetAction("a.test","testAction").call( #input9)</p-qual>
+                </p-param>
+            </p-group>
+            <p-group>
+                <title>subtest3</title>
+                <p-param name="input11">
+                    <desc>input11</desc>
+                </p-param>
+                <p-param name="input12">
+                    <desc>input12</desc>
+                    <p-qual kind="ognl" name="dataBinding" type="string">GetAction("a.test","testAction").call( #input11 )</p-qual>
+                </p-param>
+                <p-qual kind="ognl" name="notVisible" type="boolean">#input4</p-qual>
+            </p-group>
+        </p-step>
+    </presentation>
+</ns2:workflow>
