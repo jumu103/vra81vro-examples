@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:workflow xmlns:ns2="http://vmware.com/vco/workflow" root-name="item0" object-name="Workflow:name=generic" id="ff1b1e6b-8d10-400c-9b34-514e2f45a09a" editor-version="2.0" version="0.0.2" api-version="3.1.0" allowed-operations="vef" restartMode="1">
+<ns2:workflow xmlns:ns2="http://vmware.com/vco/workflow" root-name="item0" object-name="Workflow:name=generic" id="ff1b1e6b-8d10-400c-9b34-514e2f45a09a" editor-version="2.0" version="1.2.0" api-version="3.1.0" allowed-operations="vef" restartMode="1">
     <display-name>jm2 Create a user with a pw in an organizational unit</display-name>
     <description>Creates an AD user with password in a Organizational Unit</description>
     <ref-types>(AD:OrganizationalUnit)</ref-types>
-    <position y="90.0" x="180.0"/>
+    <position y="100.0" x="180.0"/>
     <input>
         <param name="accountName" type="string">
             <description>The account name for the user (without domain information)</description>
