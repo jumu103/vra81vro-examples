@@ -3,7 +3,7 @@
     <display-name>jm2 Create a user with a pw in an organizational unit</display-name>
     <description>Creates an AD user with password in a Organizational Unit</description>
     <ref-types>(AD:OrganizationalUnit)</ref-types>
-    <position y="80.0" x="180.0"/>
+    <position y="90.0" x="180.0"/>
     <input>
         <param name="accountName" type="string">
             <description>The account name for the user (without domain information)</description>
